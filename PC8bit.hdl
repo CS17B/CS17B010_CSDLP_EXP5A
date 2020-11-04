@@ -1,0 +1,15 @@
+    //To implement 8-bit program counter
+    //Question9
+
+
+CHIP PC8bit {
+    IN in[8],load,inc,reset;
+    OUT out[8];
+
+    PARTS:
+    Inc8(in=oout,out=inc1);
+    Mux8(a=oout,b=inc1,sel=inc,out=inc2);
+    Mux8(a=inc2,b=in,sel=load,out=org);
+    Mux8(a=org,b[0..7]=false,sel=reset,out=res);
+    Reg8bit(in=res,load=true,out=out,out=oout);
+}

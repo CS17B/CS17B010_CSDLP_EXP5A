@@ -1,0 +1,11 @@
+        //To Design a 1-bit registor 
+        //Question2
+
+CHIP Reg1bit {
+    IN in, load;
+    OUT out;
+
+    PARTS:
+    Mux(a=gayout,b=in,sel=load,out=c);
+    DFF(in=c,out=out,out=gayout);
+    }

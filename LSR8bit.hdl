@@ -1,0 +1,55 @@
+            //To Design left shift register 
+            //Question6
+
+
+CHIP LSR8bit {
+    IN in[8],load;
+    OUT out[8];
+
+    PARTS:
+    Not(in=load,out=out1);
+    
+    DFF(in=in[7],out=out[7],out=q0);
+
+    And(a=q0,b=load,out=b);
+    And(a=in[6],b=out1,out=c);
+    Or(a=b,b=c,out=m);
+    DFF(in=m,out=out[6],out=q1);
+
+    And(a=q1,b=load,out=d);
+    And(a=in[5],b=out1,out=e);
+    Or(a=d,b=e,out=n);
+    DFF(in=n,out=out[5],out=q2);
+
+
+    And(a=q2,b=load,out=f);
+    And(a=in[4],b=out1,out=g);
+    Or(a=f,b=g,out=o);
+    DFF(in=o,out=out[4],out=q3);
+
+
+    And(a=q3,b=load,out=h);
+    And(a=in[3],b=out1,out=i);
+    Or(a=h,b=i,out=p);
+    DFF(in=p,out=out[3],out=q4);
+
+    
+    And(a=q4,b=load,out=j);
+    And(a=in[2],b=out1,out=k);
+    Or(a=j,b=k,out=q);
+    DFF(in=q,out=out[2],out=q5);
+
+
+    And(a=q5,b=load,out=l);
+    And(a=in[1],b=out1,out=b1);
+    Or(a=l,b=b1,out=r);
+    DFF(in=r,out=out[1],out=q6);
+
+
+    And(a=q6,b=load,out=c1);
+    And(a=in[0],b=out1,out=d1);
+    Or(a=c1,b=d1,out=s);
+    DFF(in=s,out=out[0],out=q7);
+
+    
+}

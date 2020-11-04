@@ -1,0 +1,14 @@
+//To design 16-bit program counter
+//Question10
+
+CHIP PC16bit {
+    IN in[16],load,inc,reset;
+    OUT out[16];
+
+    PARTS:
+    Inc16(in=oout,out=inc1);
+    Mux16(a=oout,b=inc1,sel=inc,out=inc2);
+    Mux16(a=inc2,b=in,sel=load,out=org);
+    Mux16(a=org,b[0..15]=false,sel=reset,out=res);
+    Reg16bit(in=res,load=true,out=out,out=oout);
+}

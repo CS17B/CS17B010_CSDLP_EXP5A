@@ -1,0 +1,17 @@
+    //To Design a 32-bit registor using four 8-bit registers
+    //question5
+
+
+
+CHIP Reg32bit {
+    IN in[32], load;
+    OUT out[32];
+
+    PARTS:
+    Reg8bit(in=in[0..7],load=load,out=out[0..7]);
+    Reg8bit(in=in[8..15],load=load,out=out[8..15]);
+    Reg8bit(in=in[16..23],load=load,out=out[16..23]);
+    Reg8bit(in=in[24..31],load=load,out=out[24..31]);
+    }
+
+

@@ -1,0 +1,14 @@
+        //To Design a 16-bit registor using two 8-bit registors
+        //Question4
+    
+
+CHIP Reg16bit {
+    IN in[16], load;
+    OUT out[16];
+
+    PARTS:
+    Reg8bit(in=in[0..7],load =load,out=out[0..7]);
+    Reg8bit(in=in[8..15],load=load,out=out[8..15]);
+    }
+
+
